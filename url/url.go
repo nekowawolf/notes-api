@@ -19,5 +19,5 @@ func Web(page *fiber.App) {
 	page.Get("/notes/:id", controller.GetNotesByID)
 	page.Post("/insert", controller.InsertNotes)
 	page.Put("/update/:id", controller.UpdateNotesByID)
-	page.Delete("/delate/:id", controller.DeleteNoteByID)
+	page.Delete("/delate/:id", controller.DeleteNotesByID)
 }

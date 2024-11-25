@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/nekowawolf/notes-api/url"
+	"os"
 )
 
 func main() {
@@ -10,7 +11,12 @@ func main() {
 
 	url.Web(app)
 
-	if err := app.Listen(":3000"); err != nil {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	if err := app.Listen(":" + port); err != nil {
 		panic(err)
 	}
 }

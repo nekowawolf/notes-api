@@ -99,7 +99,7 @@ func UpdateNotesByID(c *fiber.Ctx) error {
 	})
 }
 
-func DeleteNoteByID(c *fiber.Ctx) error {
+func DeleteNotesByID(c *fiber.Ctx) error {
 	idParam := c.Params("id")
 	id, err := primitive.ObjectIDFromHex(idParam)
 	if err != nil {
